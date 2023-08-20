@@ -1,12 +1,7 @@
 
 import Card from './Card';
-import { useState, useEffect } from 'react';
 
-export default function CardList({postData}){
-    const [cardLists, setCardLists] = useState([]);
-    useEffect(()=>{
-        setCardLists(postData);
-    },[]);
+export default function CardList({cardLists}){
     return(
         <div>
             {cardLists.map((elem)=>{
