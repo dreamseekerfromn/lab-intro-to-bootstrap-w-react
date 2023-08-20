@@ -33,7 +33,13 @@ export default function Main({postData}){
     function handleTextChange(){
         const inputField = document.getElementById('search_bar').value;
         setStrSearch(inputField);
-    }
+    };
+
+    function handleClearText(){
+        const inputField = document.getElementById('search_bar');
+        inputField.value = "";
+        setCardLists(postData);
+    };
 
     return(
         <main>
@@ -42,14 +48,14 @@ export default function Main({postData}){
                 <div className="input-group mb-3">
                     <label htmlFor="search_bar" className='form-label'>Search posts by location...</label>
                     <input type="text" id="search_bar" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" onChange={handleTextChange}/>
-                    <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={()=>handleClearText()}>Clear</button>
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-10">
+                <div className="col-sm-12 col-md-8 container-fluid" >
                     <CardList cardLists={cardLists} />
                 </div>
-                <div className='col-sm-2'>
+                <div className='col-sm-12 col-md-4'>
                     <div className='location_filter'>
                         <ul className="list-group">
                             {filterByLocation.map((elem)=>(<li className='list-group-item'>{elem[0]}{elem[1]}</li>))}

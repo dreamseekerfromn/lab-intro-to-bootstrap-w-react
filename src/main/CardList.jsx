@@ -3,11 +3,11 @@ import Card from './Card';
 
 export default function CardList({cardLists}){
     return(
-        <div>
-            {cardLists.map((elem)=>{
-                return(<Card elem={elem} />);
+        <>
+            {cardLists.map((elem,index)=>{
+                return (<div className='col-sm-12 col-md-6' ><Card elem={elem} /></div>);
             })}
             
-        </div>
+        </>
     )
 }

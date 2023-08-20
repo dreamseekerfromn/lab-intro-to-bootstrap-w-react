@@ -8,7 +8,7 @@ import images from "../images/index.js";
     "updatedAt": "2022-04-12T02:58:15.102Z"*/
 export default function Card({elem}){
     return(
-        <div className="card w-25" key={elem.id} >
+        <div className="card" key={elem.id} >
             <img src={`${images[elem.location.toLowerCase()]}`} className="card-img-top" />
             <div className="card-body">
                 <h5 className="card-title">{elem.title}</h5>
