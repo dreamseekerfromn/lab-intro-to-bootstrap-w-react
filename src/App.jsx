@@ -1,11 +1,17 @@
+import Footer from "./components/common/Footer";
+import Nav from "./components/common/Nav";
 import postData from "./data/posts.json";
+import CardList from "./main/CardList";
 
 function App() {
   console.log(postData);
   return (
-    <main>
-      <button className="btn">hi</button>
-    </main>
+    <>
+      <Nav />
+      <CardList postData={postData}/>
+      <Footer/>
+    </>
+      
   );
 }
 
