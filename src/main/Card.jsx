@@ -8,12 +8,14 @@ import images from "../images/index.js";
     "updatedAt": "2022-04-12T02:58:15.102Z"*/
 export default function Card({elem}){
     return(
-        <div className="card" key={elem.id} >
-            <img src={`${images[elem.location.toLowerCase()]}`} className="card-img-top" />
-            <div className="card-body">
+        <div className="card h-100" key={elem.id} >
+            <img src={`${images[elem.location.toLowerCase()]}`} className="card-img-top img-responsive" style={{height:"300px",width:"100%"}} />
+            <div className="card-body d-block">
                 <h5 className="card-title">{elem.title}</h5>
                 <p className="card-text text-truncate">{elem.content}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button className="btn btn-warning me-md-2">Go somewhere</button>
+                </div>
             </div>
         </div>
     )

@@ -44,22 +44,31 @@ export default function Main({postData}){
     return(
         <main>
         <div className="container-fluid" >
-            <div className="row justify-content-md-center">
-                <div className="input-group mb-3">
+            <div className="row d-md-block d-none">
+                <div className="input-group mb-3 ">
                     <label htmlFor="search_bar" className='form-label'>Search posts by location...</label>
                     <input type="text" id="search_bar" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" onChange={handleTextChange}/>
                     <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={()=>handleClearText()}>Clear</button>
                 </div>
             </div>
-            <div className="row">
+            <div className="row" >
                 <div className="col-sm-12 col-md-8 container-fluid" >
                     <CardList cardLists={cardLists} />
                 </div>
                 <div className='col-sm-12 col-md-4'>
                     <div className='location_filter'>
-                        <ul className="list-group">
-                            {filterByLocation.map((elem)=>(<li className='list-group-item'>{elem[0]}{elem[1]}</li>))}
-                        </ul>
+                        <p className="h4">Post by <span style={{color:"gold"}}>location</span></p>
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Location</th>
+                                <th scope="col">Post</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {filterByLocation.map((elem)=>(<tr><td>{elem[0]}</td><td>{elem[1]}</td></tr>))}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
