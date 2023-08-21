@@ -79,7 +79,11 @@ export default function Main({postData}){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {filterByLocation.map((elem)=>(<tr><td>{elem[0]}</td><td>{elem[1]}</td></tr>))}
+                                    {filterByLocation.map((elem)=>(
+                                        <tr>
+                                            <td className='text-left'>{elem[0]}</td>
+                                            <td className='text-right'><span className='text-white bg-dark'>{elem[1]}</span></td>
+                                        </tr>))}
                                 </tbody>
                             </table>
                         </div>
