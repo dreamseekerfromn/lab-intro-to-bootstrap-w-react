@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import CardList from './CardList';
 import ErrorMsg from '../components/common/error/ErrorMsg';
+import Header from '../components/common/Header';
 
 export default function Main({postData}){
     const [cardLists, setCardLists] = useState([]);
@@ -55,7 +56,9 @@ export default function Main({postData}){
     return(
         <main>
             <div className="container-fluid mb-5" >
-                
+                <div className="row d-md-block d-none">
+                    <Header />
+                </div>
                 <div className="row d-md-block d-none">
                     <div className="input-group mb-3 ">
                         <label htmlFor="search_bar" className='form-label'>Search posts by location...</label>
